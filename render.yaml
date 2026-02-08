@@ -6,8 +6,11 @@ services:
     buildCommand: >
       apt-get update &&
       apt-get install -y ffmpeg &&
-      pip install -r requirements.txt
+      pip install --upgrade pip &&
+      PIP_EXTRA_INDEX_URL=https://download.pytorch.org/whl/cpu pip install -r requirements.txt
     startCommand: gunicorn app:app --bind 0.0.0.0:$PORT
     envVars:
+      - key: PYTHON_VERSION
+        value: "3.10.13"
       - key: PYTHONUNBUFFERED
         value: "1"

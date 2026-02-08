@@ -4,7 +4,8 @@ pydub
 librosa
 numpy
 pandas
-torch
+torch==2.2.2+cpu
+torchaudio==2.2.2+cpu
 transformers
 speechbrain
 plotly
