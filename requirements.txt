@@ -1,0 +1,10 @@
+flask
+gunicorn
+pydub
+librosa
+numpy
+pandas
+torch
+transformers
+speechbrain
+plotly

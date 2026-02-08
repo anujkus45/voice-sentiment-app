@@ -1,0 +1,154 @@
+:root {
+    --bg: #f5f6f8;
+    --card: #ffffff;
+    --text: #111827;
+    --muted: #6b7280;
+    --primary: #2563eb;
+    --border: #e5e7eb;
+    --warn: #b45309;
+    --error: #b91c1c;
+    --success: #047857;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    margin: 0;
+    padding: 32px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+h1 {
+    margin: 0 0 8px;
+    font-size: 28px;
+}
+
+h2 {
+    margin: 0 0 16px;
+    font-size: 20px;
+}
+
+.subtitle {
+    color: var(--muted);
+    margin: 0 0 24px;
+}
+
+.card {
+    background: var(--card);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    box-shadow: 0 2px 6px rgba(15, 23, 42, 0.06);
+}
+
+.controls .row {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    align-items: flex-end;
+}
+
+.controls .field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 180px;
+}
+
+.controls input,
+.controls select {
+    padding: 8px 10px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.actions {
+    margin-top: 16px;
+}
+
+button,
+.ghost {
+    padding: 10px 14px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background: #fff;
+    cursor: pointer;
+    font-size: 14px;
+    text-decoration: none;
+    color: var(--text);
+}
+
+button.primary {
+    background: var(--primary);
+    color: #fff;
+    border-color: var(--primary);
+}
+
+button.ghost,
+.ghost {
+    background: #fff;
+}
+
+.status {
+    margin-top: 12px;
+    font-size: 14px;
+    color: var(--muted);
+}
+
+.status.warn {
+    color: var(--warn);
+}
+
+.status.error {
+    color: var(--error);
+}
+
+.status.success {
+    color: var(--success);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 10px;
+    border-bottom: 1px solid var(--border);
+    text-align: left;
+}
+
+th {
+    background: #f9fafb;
+}
+
+.raw {
+    background: #0f172a;
+    color: #e2e8f0;
+    padding: 16px;
+    border-radius: 8px;
+    overflow-x: auto;
+    min-height: 120px;
+}
+
+@media (max-width: 700px) {
+    body {
+        padding: 20px;
+    }
+
+    .controls .field {
+        width: 100%;
+    }
+}

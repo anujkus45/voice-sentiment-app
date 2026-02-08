@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Voice Emotion Dashboard</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Voice Emotion Dashboard</h1>
+        <p class="subtitle">Upload audio, analyze emotion changes, and view results in one place.</p>
+
+        <section class="card controls">
+            <div class="row">
+                <label class="field">
+                    <span>Audio file</span>
+                    <input id="audioFile" type="file" accept=".wav,.mp3">
+                </label>
+
+                <label class="field">
+                    <span>Chunk size (ms)</span>
+                    <input id="chunkSize" type="number" min="250" step="250" value="2000">
+                </label>
+
+                <label class="field">
+                    <span>Model</span>
+                    <select id="modelSelect">
+                        <option value="superb">superb/wav2vec2-base-superb-er</option>
+                    </select>
+                </label>
+
+                <label class="field">
+                    <span>Emotion map</span>
+                    <select id="mapSelect">
+                        <option value="short_to_full">Short -> Full</option>
+                        <option value="none">None</option>
+                    </select>
+                </label>
+            </div>
+
+            <div class="row actions">
+                <button id="uploadBtn">Upload</button>
+                <button id="analyzeBtn" class="primary">Analyze</button>
+                <button id="clearBtn" class="ghost">Clear uploads</button>
+                <a id="downloadLink" class="ghost" href="#" download="emotion_timeline.json">Download JSON</a>
+            </div>
+
+            <div id="statusMessage" class="status"></div>
+        </section>
+
+        <section class="card">
+            <h2>Detected Emotion Changes</h2>
+            <table id="emotionTable">
+                <thead>
+                    <tr>
+                        <th>Time</th>
+                        <th>Emotion</th>
+                        <th>Confidence</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+
+        <section class="card">
+            <h2>Emotion Changes Over Time</h2>
+            <canvas id="emotionChart"></canvas>
+        </section>
+
+        <section class="card">
+            <h2>Raw JSON</h2>
+            <pre id="rawJson" class="raw"></pre>
+        </section>
+    </div>
+
+    <script src="{{ url_for('static', filename='chart.js') }}"></script>
+</body>
+</html>
