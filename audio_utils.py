@@ -1,9 +1,15 @@
 from pydub import AudioSegment
+import os
 
-# HARD-CODED paths (Windows fix)
-AudioSegment.converter = r"C:\Users\anuj04\Downloads\ffmpeg-2026-02-04-git-627da1111c-full_build\ffmpeg-2026-02-04-git-627da1111c-full_build\bin\ffmpeg.exe"
-AudioSegment.ffmpeg    = AudioSegment.converter
-AudioSegment.ffprobe   = r"C:\Users\anuj04\Downloads\ffmpeg-2026-02-04-git-627da1111c-full_build\ffmpeg-2026-02-04-git-627da1111c-full_build\bin\ffprobe.exe"
+# Optional: set custom ffmpeg paths via environment variables
+ffmpeg_path = os.getenv("FFMPEG_PATH")
+ffprobe_path = os.getenv("FFPROBE_PATH")
+
+if ffmpeg_path:
+    AudioSegment.converter = ffmpeg_path
+    AudioSegment.ffmpeg = ffmpeg_path
+if ffprobe_path:
+    AudioSegment.ffprobe = ffprobe_path
 
 
 def chunk_audio(file_path, chunk_length_ms=4000):
