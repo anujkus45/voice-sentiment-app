@@ -4,6 +4,7 @@ pydub
 librosa
 numpy
 pandas
+ffmpeg-python
 torch==2.2.2+cpu
 torchaudio==2.2.2+cpu
 transformers
