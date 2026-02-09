@@ -1,12 +1,9 @@
-flask==3.1.2
+Flask==3.1.2
+Werkzeug==3.1.5
 gunicorn==25.0.3
+numpy==2.3.5
 pydub==0.25.1
-librosa==0.11.0
-numpy==2.4.2
-pandas==3.0.0
-ffmpeg-python==0.2.0
-torch==2.10.0+cpu
-torchaudio==2.10.0+cpu
-transformers==4.55.3
-speechbrain==1.0.3
-plotly==6.5.2
+torch==2.10.0
+transformers==5.1.0
+#
+# NOTE: pydub requires ffmpeg installed on the server (system dependency).
