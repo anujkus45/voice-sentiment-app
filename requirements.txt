@@ -1,9 +1,5 @@
-streamlit==1.24.1
-pandas==2.2.2
+transformers==4.36.2
+torch
 numpy<2
-pydub==0.25.1
-requests==2.31.0
-
-# Note: For Streamlit Cloud deployment we keep the requirements minimal.
-# If you need the Flask app (app.py) and gunicorn for other deployments,
-# install the additional dependencies from `requirements-flask.txt`.
+streamlit
+pydub
