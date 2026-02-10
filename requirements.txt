@@ -8,3 +8,5 @@ requests==2.31.0
 
 # Removed heavy local ML packages (torch/transformers) for serverless deployment.
 # Use Hugging Face Inference API instead; set HF_API_TOKEN as a Vercel environment variable.
+
+streamlit==1.24.1
