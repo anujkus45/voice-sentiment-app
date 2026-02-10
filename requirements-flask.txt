@@ -1,0 +1,10 @@
+Flask==3.1.2
+Werkzeug==3.1.5
+gunicorn==25.0.3
+
+numpy<2
+pydub==0.25.1
+requests==2.31.0
+
+# Removed heavy local ML packages (torch/transformers) for serverless deployment.
+# Use Hugging Face Inference API instead; set HF_API_TOKEN as a Vercel environment variable.
