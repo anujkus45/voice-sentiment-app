@@ -1,0 +1,8 @@
+{
+  "build": {
+    "env": {
+      "HF_HOME": "/tmp/hf",
+      "TRANSFORMERS_CACHE": "/tmp/hf"
+    }
+  }
+}
