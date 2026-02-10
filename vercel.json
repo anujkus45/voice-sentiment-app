@@ -1,8 +1,18 @@
 {
-  "build": {
-    "env": {
-      "HF_HOME": "/tmp/hf",
-      "TRANSFORMERS_CACHE": "/tmp/hf"
+  "builds": [
+    {
+      "src": "app.py",
+      "use": "@vercel/python"
     }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "app.py"
+    }
+  ],
+  "env": {
+    "HF_HOME": "/tmp/hf",
+    "TRANSFORMERS_CACHE": "/tmp/hf"
   }
 }
